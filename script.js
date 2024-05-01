@@ -1,6 +1,9 @@
 window.addEventListener('scroll', function() {
     var header = document.getElementById('header-scroll');
     var logo = header.querySelector('.logo');
+    let offset = window.pageYOffset;
+    let parallaxImage = document.querySelector('.parallax-img');
+    let parallaxTextContainer = document.querySelector('.text__container');
     
     if (window.scrollY > 0) {
         header.classList.add('header-scrolled');
@@ -9,27 +12,26 @@ window.addEventListener('scroll', function() {
         header.classList.remove('header-scrolled');
         logo.classList.remove('logo-scrolled');
     }
+    
+    // PARALLAX SCROLLING EFFECT
+    parallaxImage.style.transform = 'translateY(' + offset * 0.2 + 'px)';
+
+    // DISABLING PARALLAX EFFECT ON SMALLER SCREENS
+    var screenWidth = window.innerWidth;
+    if (screenWidth < 1024) { 
+        parallaxTextContainer.style.transform = 'none';
+    } else {
+        parallaxTextContainer.style.transform = 'translateY(' + offset * 0.8 + 'px)';
+        parallaxTextContainer.style.zIndex = '-1';
+    }
 });
 
 // MOBILE MENU
-
 function toggleMenu() {
     var mobileNav = document.querySelector('.mobile-nav');
     mobileNav.classList.toggle('active');
   }
   
-
-window.addEventListener('scroll', function(){
-    let offset = window.pageYOffset;
-    let parallaxImage = document.querySelector('.parallax-img');
-    let parallaxTextContainer = document.querySelector('.text__container');
-
-    parallaxImage.style.transform = 'translateY(' + offset * 0.2 + 'px)';
-    parallaxTextContainer.style.transform = 'translateY(' + offset * 0.8 + 'px)';
-
-    // Adjust the position of the text container to ensure it stays above the parallax image
-    parallaxTextContainer.style.zIndex = '-1';
-});
 
 function showTooltip(event) {
     var tooltip = document.getElementById("tooltip");

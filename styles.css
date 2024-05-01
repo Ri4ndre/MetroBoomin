@@ -112,7 +112,6 @@ header {
 
 .header-scrolled {
   padding: 10px 5%;
-  letter-spacing: 2px;
   background-color: rgb(0, 0, 0);
 }
 
@@ -428,6 +427,9 @@ footer {
 @media screen and (max-width: 1024px) {
   /* TABLETS */
 
+  .logo{
+    margin-left: 25px;
+  }
   .menu-button {
     display: block;
   }
@@ -469,7 +471,7 @@ footer {
     margin-bottom: 15px;
   }
 
-  .user-button{
+  .user-button {
     margin-right: -160px;
   }
 
@@ -478,8 +480,37 @@ footer {
   }
 
   .text__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     height: auto;
-    padding: 0 10px;
+    padding: 0 20px;
+  }
+
+  .text__container h1 {
+    margin-top: 20px;
+    font-size: 164px;
+    text-align: center;
+  }
+
+  .text__container p {
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .left__text p {
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .right__text p {
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .title {
@@ -489,18 +520,6 @@ footer {
 
 @media screen and (max-width: 768px) {
   /* SMALLER TABLET OR LARGE PHONE */
-  .text__container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    width: 100%;
-  }
-
-  .text__container h1 {
-    font-size: 164px;
-  }
 
   .title {
     font-size: 4.5rem;
