@@ -1,5 +1,5 @@
 window.addEventListener('scroll', function() {
-    var header = document.getElementById('myHeader');
+    var header = document.getElementById('header-scroll');
     var logo = header.querySelector('.logo');
     
     if (window.scrollY > 0) {
@@ -10,6 +10,14 @@ window.addEventListener('scroll', function() {
         logo.classList.remove('logo-scrolled');
     }
 });
+
+// MOBILE MENU
+
+function toggleMenu() {
+    var mobileNav = document.querySelector('.mobile-nav');
+    mobileNav.classList.toggle('active');
+  }
+  
 
 window.addEventListener('scroll', function(){
     let offset = window.pageYOffset;

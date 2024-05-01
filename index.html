@@ -9,7 +9,7 @@
   </head>
 
   <body>
-    <header id="myHeader">
+    <header id="header-scroll">
       <img class="logo" src="Media/logo.png" alt="Logo" />
       <nav>
         <ul class="nav__links">
@@ -20,7 +20,19 @@
         </ul>
       </nav>
       <a href="#" class="user-button"><img src="Media/user-icon.png" /></a>
+      <div class="menu-button" onclick="toggleMenu()">
+        <img src="Media/menu-icon.png"/>
+      </div>
+      <div class="mobile-nav">
+        <ul class="mobile-nav__links">
+          <li><a href="#overview">OVERVIEW</a></li>
+          <li><a href="#music">MUSIC</a></li>
+          <li><a href="#news">NEWS</a></li>
+          <li><a href="#">INFO</a></li>
+        </ul>
+      </div>
     </header>
+    
 
     <main>
       <div class="text__container">
