@@ -1,9 +1,6 @@
 window.addEventListener('scroll', function() {
     var header = document.getElementById('header-scroll');
     var logo = header.querySelector('.logo');
-    let offset = window.pageYOffset;
-    let parallaxImage = document.querySelector('.parallax-img');
-    let parallaxTextContainer = document.querySelector('.text__container');
     
     if (window.scrollY > 0) {
         header.classList.add('header-scrolled');
@@ -12,12 +9,16 @@ window.addEventListener('scroll', function() {
         header.classList.remove('header-scrolled');
         logo.classList.remove('logo-scrolled');
     }
-    
-    // PARALLAX SCROLLING EFFECT
-    parallaxImage.style.transform = 'translateY(' + offset * 0.2 + 'px)';
+});
 
-    // DISABLING PARALLAX EFFECT ON SMALLER SCREENS
+// SEPERATING TWO SCROLLING EFFECTS SINCE THEY INTERFERE WITH EACH OTHER
+window.addEventListener('scroll', function() {
+    let offset = window.pageYOffset;
+    let parallaxImage = document.querySelector('.parallax-img');
+    let parallaxTextContainer = document.querySelector('.text__container');
     var screenWidth = window.innerWidth;
+
+
     if (screenWidth < 1024) { 
         parallaxTextContainer.style.transform = 'none';
     } else {
@@ -27,6 +28,7 @@ window.addEventListener('scroll', function() {
 });
 
 // MOBILE MENU
+
 function toggleMenu() {
     var mobileNav = document.querySelector('.mobile-nav');
     mobileNav.classList.toggle('active');
