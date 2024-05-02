@@ -1,3 +1,5 @@
+// STICKY NAVIGATION HEADER (ON-SCROLL)
+
 window.addEventListener('scroll', function() {
     var header = document.getElementById('header-scroll');
     var logo = header.querySelector('.logo');
@@ -11,7 +13,35 @@ window.addEventListener('scroll', function() {
     }
 });
 
+// NEWSLETTER MODAL
+
+var modalButton = document.getElementById('modal-button');
+var modal = document.querySelector('.modal');
+
+function showModal() {
+  modal.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function hideModal() {
+  modal.classList.remove('active');
+  document.body.style.overflow = 'auto';
+}
+
+modalButton.addEventListener('click', function(e) {
+  showModal();
+  e.preventDefault();
+});
+
+modal.addEventListener('click', function(e) {
+  if (e.target === modal) {
+    hideModal();
+  }
+  e.preventDefault();
+});
+
 // SEPERATING TWO SCROLLING EFFECTS SINCE THEY INTERFERE WITH EACH OTHER
+
 window.addEventListener('scroll', function() {
     let offset = window.pageYOffset;
     let parallaxImage = document.querySelector('.parallax-img');
@@ -21,8 +51,10 @@ window.addEventListener('scroll', function() {
 
     if (screenWidth < 1024) { 
         parallaxTextContainer.style.transform = 'none';
+        parallaxImage.style.transform = 'none';
     } else {
         parallaxTextContainer.style.transform = 'translateY(' + offset * 0.8 + 'px)';
+        parallaxImage.style.transform = 'translateY(' + offset * 0.2 + 'px)';
         parallaxTextContainer.style.zIndex = '-1';
     }
 });
@@ -35,17 +67,19 @@ function toggleMenu() {
   }
   
 
+  // TOOLTIP
+
 function showTooltip(event) {
     var tooltip = document.getElementById("tooltip");
     tooltip.style.display = "block";
     updateTooltipPosition(event);
-    document.addEventListener("mousemove", updateTooltipPosition); // Add event listener to update tooltip position on mousemove
+    document.addEventListener("mousemove", updateTooltipPosition); 
 }
 
 function hideTooltip() {
     var tooltip = document.getElementById("tooltip");
     tooltip.style.display = "none";
-    document.removeEventListener("mousemove", updateTooltipPosition); // Remove event listener when hiding tooltip
+    document.removeEventListener("mousemove", updateTooltipPosition); 
 }
 
 function updateTooltipPosition(event) {
@@ -57,11 +91,11 @@ function updateTooltipPosition(event) {
     var windowWidth = window.innerWidth;
     var windowHeight = window.innerHeight;
 
-    // Calculate new tooltip position
-    var tooltipX = mouseX + 10; // Add 10 pixels to the right of the cursor
-    var tooltipY = mouseY - tooltipHeight - 10; // Adjust vertically above the cursor
 
-    // Adjust tooltip position to prevent it from going off-screen
+    var tooltipX = mouseX + 10; 
+    var tooltipY = mouseY - tooltipHeight - 5; 
+
+
     if (tooltipX + tooltipWidth > windowWidth) {
         tooltipX = windowWidth - tooltipWidth;
     }
