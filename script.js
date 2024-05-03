@@ -16,15 +16,16 @@ window.addEventListener('scroll', function() {
 // NEWSLETTER MODAL
 
 var modalButton = document.getElementById('modal-button');
-var modal = document.querySelector('.modal');
+var closeButton = document.getElementById('close-button');
+var newsModal = document.querySelector('.news-modal');
 
 function showModal() {
-  modal.classList.add('active');
+  newsModal.classList.add('active');
   document.body.style.overflow = 'hidden';
 }
 
 function hideModal() {
-  modal.classList.remove('active');
+  newsModal.classList.remove('active');
   document.body.style.overflow = 'auto';
 }
 
@@ -33,10 +34,15 @@ modalButton.addEventListener('click', function(e) {
   e.preventDefault();
 });
 
-modal.addEventListener('click', function(e) {
-  if (e.target === modal) {
+newsModal.addEventListener('click', function(e) {
+  if (e.target === newsModal) {
     hideModal();
   }
+  e.preventDefault();
+});
+
+closeButton.addEventListener('click', function(e) {
+  hideModal();
   e.preventDefault();
 });
 
@@ -92,7 +98,7 @@ function updateTooltipPosition(event) {
     var windowHeight = window.innerHeight;
 
 
-    var tooltipX = mouseX + 10; 
+    var tooltipX = mouseX + 25; 
     var tooltipY = mouseY - tooltipHeight - 5; 
 
 

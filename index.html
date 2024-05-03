@@ -9,23 +9,68 @@
   </head>
 
   <body>
-    <section class="modal">
+    <!-- SEARCH MODAL -->
+    <!-- ISSUE TO DEBUG: SEARCH MODAL NOT WORKING 
+    <section class="search-modal">
+      <div class="close-button" id="search-close">
+        <img src="Media/close-icon.png" />
+      </div>
       <div class="form__container">
-        <h2>SUBSCRIBE TO THE NEWSLETTER</h2>
+        <h3>SEARCH</h3>
+        <form>
+          <input
+            id="search-input"
+            type="text"
+            placeholder="Search for something..."
+            aria-label="Search"
+          />
+          <button type="submit" aria-label="Submit">SEARCH</button>
+        </form>
+      </div>
+      -->
+    <!-- NEWSLETTER MODAL -->
+    <section class="news-modal">
+      <!-- CLOSE BUTTON -->
+      <div class="close-button" id="close-button">
+        <img src="Media/close-icon.png" />
+      </div>
+      <div class="form__container">
+        <h3>SUBSCRIBE TO THE NEWSLETTER</h3>
+        <p>
+          Stay up to date with the latest news and updates about Metro Boomin
+        </p>
+        <form>
+          <input
+            type="text"
+            placeholder="Enter your name"
+            aria-label="Enter your name"
+          />
+          <input
+            type="text"
+            placeholder="Enter your email"
+            aria-label="Enter your email"
+          />
+          <button type="submit" aria-label="Submit">SUBMIT</button>
+        </form>
       </div>
     </section>
     <header id="header-scroll">
-      <img class="logo" src="Media/logo.png" alt="Logo" />
+      <a href="index.html"><img class="logo" src="Media/logo.png" alt="Logo" /></a>
       <nav>
         <ul class="nav__links">
           <li><a href="#overview" aria-label="HOME">OVERVIEW</a></li>
           <li><a href="#music" aria-label="MUSIC">MUSIC</a></li>
           <li><a href="#news" aria-label="NEWS">NEWS</a></li>
-          <li><a href="#" aria-label="INFO">INFO</a></li>
+          <li><a href="#tour" aria-label="INFO">TOUR</a></li>
         </ul>
       </nav>
       <div class="menu__icons">
-        <div class="user-button" id="modal-button"><img src="Media/user-icon.png" /></div>
+        <div class="search-button" id="search-button">
+          <img src="Media/search-icon.png" />
+        </div>
+        <div class="user-button" id="modal-button">
+          <img src="Media/user-icon.png" />
+        </div>
         <div class="menu-button" onclick="toggleMenu()">
           <img src="Media/menu-icon.png" />
         </div>
@@ -35,7 +80,7 @@
           <li><a href="#overview">OVERVIEW</a></li>
           <li><a href="#music">MUSIC</a></li>
           <li><a href="#news">NEWS</a></li>
-          <li><a href="#">INFO</a></li>
+          <li><a href="#tour">TOUR</a></li>
         </ul>
       </div>
     </header>
@@ -101,7 +146,21 @@
           <h2>Production Collaborations</h2>
           <div class="production__collab">
             <div class="left__prod__container">
-              <img src="Media/spdierverse.jpg" alt="" />
+              <img
+                src="Media/spdierverse.jpg"
+                class="prod-album-img"
+                alt="Album Cover"
+              />
+              <!-- SPOTIFY LINK IMAGE -->
+              <div class="spotify__container">
+                <a
+                  href="https://open.spotify.com/album/1bwbZJ6khPJyVpOaqgKsoZ?si=Va-Vp8ceTlGcQwQ4dkQtFQ"
+                  target="_blank"
+                >
+                  <img src="Media/spotify_icon.png" alt="Spotify Link" />
+                  <h4>Listen to the full<br />album on Spotify</h4>
+                </a>
+              </div>
             </div>
             <div class="right__prod__container">
               <h3>Spider-Man: Across the Spider-Verse (soundtrack)</h3>
@@ -154,9 +213,174 @@
         </p>
       </div>
 
-      <img src="Media/divider-2.png" class="divider-4" />
+      <div class="tour__section" id="tour">
+        <h1>Tour</h1>
+        <div class="tour-dates-table">
+          <div class="tour-date">
+            <table>
+              <tr>
+                <th>DATE</th>
+                <th>LOCATION</th>
+                <th>VENUE</th>
+                <th>BOOKING</th>
+              </tr>
+              <tr>
+                <td>July 30, 2024</td>
+                <td>Kansas City</td>
+                <td>T-Mobile Center</td>
+                <td>
+                  <a
+                    href="https://www.bandsintown.com/artist-subscribe/7767597?utm_campaign=track&utm"
+                    target="_blank"
+                    >Booking</a
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>July 31, 2024</td>
+                <td>Saint Paul</td>
+                <td>XCEL Energy Center</td>
+                <td>
+                  <a
+                    href="https://www.bandsintown.com/artist-subscribe/7767597?utm_campaign=track&utm"
+                    target="_blank"
+                    >Booking</a
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>August 2, 2024</td>
+                <td>Milwaukee</td>
+                <td>Fiserv Forum</td>
+                <td>
+                  <a
+                    href="https://www.bandsintown.com/artist-subscribe/7767597?utm_campaign=track&utm"
+                    target="_blank"
+                    >Booking</a
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>August 3, 2024</td>
+                <td>Chicago</td>
+                <td>LOLLAPALOOZA CHICAGO 2024: FUTURE X METRO BOOMIN</td>
+                <td>
+                  <a
+                    href="https://www.bandsintown.com/artist-subscribe/7767597?utm_campaign=track&utm"
+                    target="_blank"
+                    >Booking</a
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>August 4, 2024</td>
+                <td>Indianapolis</td>
+                <td>Bankers Life Fieldhouse</td>
+                <td>
+                  <a
+                    href="https://www.bandsintown.com/artist-subscribe/7767597?utm_campaign=track&utm"
+                    target="_blank"
+                    >Booking</a
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>August 6, 2024</td>
+                <td>Buffalo</td>
+                <td>KeyBank Center</td>
+                <td>
+                  <a
+                    href="https://www.bandsintown.com/artist-subscribe/7767597?utm_campaign=track&utm"
+                    target="_blank"
+                    >Booking</a
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>August 7, 2024</td>
+                <td>Albany</td>
+                <td>Times Union Center</td>
+                <td>
+                  <a
+                    href="https://www.bandsintown.com/artist-subscribe/7767597?utm_campaign=track&utm"
+                    target="_blank"
+                    >Booking</a
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>August 9, 2024</td>
+                <td>Providence</td>
+                <td>Dunkin' Donuts Center</td>
+                <td>
+                  <a
+                    href="https://www.bandsintown.com/artist-subscribe/7767597?utm_campaign=track&utm"
+                    target="_blank"
+                    >Booking</a
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>August 10, 2024</td>
+                <td>Philadelphia</td>
+                <td>Wells Fargo Center</td>
+                <td>
+                  <a
+                    href="https://www.bandsintown.com/artist-subscribe/7767597?utm_campaign=track&utm"
+                    target="_blank"
+                    >Booking</a
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>August 11, 2024</td>
+                <td>Brooklyn</td>
+                <td>Barclays Center</td>
+                <td>
+                  <a
+                    href="https://www.bandsintown.com/artist-subscribe/7767597?utm_campaign=track&utm"
+                    target="_blank"
+                    >Booking</a
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>August 13, 2024</td>
+                <td>Washington, D.C.</td>
+                <td>Capital One Arena</td>
+                <td>
+                  <a
+                    href="https://www.bandsintown.com/artist-subscribe/7767597?utm_campaign=track&utm"
+                    target="_blank"
+                    >Booking</a
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>August 14, 2024</td>
+                <td>Charlotte</td>
+                <td>Spectrum Center</td>
+                <td>
+                  <a
+                    href="https://www.bandsintown.com/artist-subscribe/7767597?utm_campaign=track&utm"
+                    target="_blank"
+                    >Booking</a
+                  >
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
 
-      <img src="Media/boominart.png" class="banner-1" />
+      <!-- TOUR BANNER -->
+      <div class="tour-banner">
+        <img src="Media/tour-banner.jpg" alt="Tour Banner"/>
+      </div>
+
+      <img src="Media/divider-2.png" class="divider-4" alt="Divider"/>
+
+      <img src="Media/boominart.png" class="banner-1" alt="Divider"/>
 
       <a href="https://metroboomin.lnk.to/HeroesandVillainsWE" target="_blank">
         <div
@@ -189,8 +413,8 @@
           <a>Subscribe</a>
         </li>
         <li>
-          <h4>CONTACT</h4>
-          <a>Email Us</a>
+          <a href="contact.html"><h4>CONTACT</h4></a>
+          <a href="contact.html">Contact Us</a>
           <a>Phone Us</a>
           <a>Jobs</a>
         </li>

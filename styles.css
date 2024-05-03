@@ -28,13 +28,6 @@ body {
   color: #fff;
 }
 
-.title {
-  position: relative;
-  font-family: "Impact", sans-serif;
-  color: var(--heading-colour);
-  font-size: 10rem;
-}
-
 h2 {
   font-size: 66px;
   color: var(--heading-colour);
@@ -89,7 +82,9 @@ header {
 }
 
 .nav__links a:hover {
+  padding: 5px 10px;
   font-weight: bold;
+  border: 3px solid var(--primary-colour);
 }
 
 .logo {
@@ -104,6 +99,16 @@ header {
   flex-direction: row;
   gap: 20px;
   align-items: center;
+}
+
+.search-button {
+  margin-top: 2.5px;
+  cursor: pointer;
+}
+
+.search-button img {
+  width: 35px;
+  height: auto;
 }
 
 .user-button{
@@ -199,17 +204,42 @@ header {
 .text__container img {
   position: absolute;
   top: 0;
-  left: 26%;
+  left: 26.5%;
+  /* TRANSFORM 0 TO FIX INITIAL IMAGE STATE*/
+  transform: translate(0%);
   width: 800px;
   height: auto;
-  transform: translateX(0%);
   z-index: 0;
+}
+
+/* SEARCH MODAL */
+
+.search-modal {
+  z-index: 15;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.5s, visibility 0s 0.5s;
+}
+
+.search-modal.active {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.5s;
 }
 
 /* NEWSLETTER MODAL */
 
-.modal{
-  z-index:11;
+.news-modal{
+  z-index: 15;
   position: fixed;
   top:0;
   left:0;
@@ -218,16 +248,29 @@ header {
   align-items: center;
   height:100%;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.85);
+  background-color: rgba(0, 0, 0, 0.9);
   visibility: hidden;
   opacity: 0;
 	transition: opacity 0.5s, visibility 0s 0.5s;
 }
 
-.modal.active {
+.news-modal.active {
   	opacity: 1;
   	visibility: visible;
   	transition: opacity 0.5s;
+}
+
+.close-button{
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  cursor: pointer;
+}
+
+.close-button img{
+  width: 70px;
+  height: auto;
+
 }
 
 .form__container{
@@ -236,6 +279,65 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.form__container h3{
+  font-weight: 300;
+}
+
+.form__container p{
+  display: flex;
+  justify-content: flex-start;    
+  text-align: left;
+  font-weight: 400;
+  margin-bottom: 48px;
+  font-size: 19.5px;
+  color: var(--primary-colour);
+}
+
+.form__container form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.form__container input{
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 22px;
+  font-weight: 300;
+  color: #d1d1d1;
+  border: 3px solid var(--primary-colour);
+  background-color: transparent;
+  width: 665px;
+  padding: 10px;
+  margin-bottom: 12px;
+  transition: all 0.3s ease;
+}
+
+input:focus{
+  outline: none;
+  border: 3px double #d1d1d1;
+}
+
+.form__container button{
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  border: 5px solid var(--primary-colour);
+  background-color: var(--primary-colour);
+  color: var(--bg-colour);
+  width: 665px;
+  margin-top: 15px;
+  padding: 16px 28px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.form__container button:hover{
+  border: 5px solid var(--primary-colour);
+  background-color: var(--bg-colour);
+  color: var(--primary-colour);
 }
 
 .divider {
@@ -251,7 +353,7 @@ header {
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 500%;
+  height: 600%;
   background: var(--bg-colour);
   background-image: url("Media/StaticWide.png");
   background-repeat: repeat-y;
@@ -293,6 +395,10 @@ header {
   z-index: 5;
   margin: 0 auto;
   width: 80%;
+}
+
+.music__section h2{
+  margin-top: 48px;
 }
 
 .cover__art {
@@ -363,7 +469,30 @@ header {
   width: 100%;
   height: auto;
   display: block;
+}
+
+.prod-album-img{
   border: 5px solid var(--primary-colour);
+}
+
+.spotify__container{
+  margin-top: 24px;
+}
+
+.spotify__container img{
+  margin-right: 14px;
+  width: 64px;
+  height: auto;
+  display: block;
+}
+
+.spotify__container h4{
+  font-size: 26px;
+}
+
+.spotify__container a{
+  display: flex;
+  flex-direction: row;
 }
 
 .right__prod__container {
@@ -403,6 +532,55 @@ header {
   background-position: center;
 }
 
+.tour__section{
+  margin: 0 auto;
+  margin-top: 150px;
+  margin-bottom: 130px;
+  width: 80%;
+}
+
+.tour__section h1{
+  font-family: "Impact", sans-serif;
+  font-weight: 500;
+  font-size: 125px;
+  color: var(--heading-colour);
+  text-align: center;
+}
+
+.tour__section table{
+  margin-top: 48px;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tour__section th{
+  text-align: left;
+  font-size: 26px;
+  font-weight: 500;
+  color: var(--heading-colour);
+  padding: 12px;
+  border-bottom: 3px solid var(--primary-colour);
+}
+
+.tour__section td{
+  font-size: 22px;
+  font-weight: 300;
+  color: var(--heading-colour);
+  padding: 12px;
+  border-bottom: 3px solid var(--primary-colour);
+}
+
+.tour__section a:hover{
+  text-decoration: underline;
+}
+
+.tour-banner img{
+  border-top: 5px solid var(--primary-colour);
+  margin-bottom: -5%;
+  width: 100%;
+  height: auto;
+}
+
 .divider-4 {
   transform: translate(0, -20%);
   width: 100%;
@@ -417,7 +595,7 @@ header {
 .banner-2 {
   cursor: pointer;
   width: 100%;
-  height: 695px;
+  height: 696px;
   margin-top: -8px;
   background: url(Media/H&V_Banner.png);
   background-size: cover;
@@ -476,6 +654,92 @@ footer {
   text-decoration: none;
 }
 
+/* CONTACT FORM */
+
+.contact__form {
+  margin: 0 auto;
+  width: 665px;
+}
+
+.contact__form form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact__form h2{
+  align-items: left;
+  margin-top: 10%;
+  margin-bottom: 48px;
+  text-align: left;
+}
+
+.contact__form input {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 22px;
+  font-weight: 300;
+  color: #d1d1d1;
+  border: 3px solid var(--primary-colour);
+  background-color: transparent;
+  width: 665px;
+  padding: 10px;
+  margin-bottom: 12px;
+  transition: all 0.3s ease;
+}
+
+.contact__form input:focus {
+  outline: none;
+  border: 3px double #d1d1d1;
+}
+
+.contact__form textarea {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 22px;
+  font-weight: 300;
+  color: #d1d1d1;
+  border: 3px solid var(--primary-colour);
+  background-color: transparent;
+  width: 665px;
+  height: 150px;
+  padding: 10px;
+  margin-bottom: 12px;
+  transition: all 0.3s ease;
+}
+
+.contact__form textarea:focus {
+  outline: none;
+  border: 3px double #d1d1d1;
+}
+
+.contact__form button {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  border: 5px solid var(--primary-colour);
+  background-color: var(--primary-colour);
+  color: var(--bg-colour);
+  width: 665px;
+  margin-top: 15px;
+  padding: 16px 28px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.contact__form button:hover {
+  border: 5px solid var(--primary-colour);
+  background-color: var(--bg-colour);
+  color: var(--primary-colour);
+}
+
+.contact__footer{
+  background-color: var(--primary-colour);
+  position: relative;
+  margin-top: 10%;
+}
+
+
+
 /* MEDIA QUARIES */
 
 @media (-webkit-device-pixel-ratio: 1.25) {
@@ -489,6 +753,20 @@ footer {
     margin-top: 250px;
   }
 }
+
+/* FALLBACK */
+
+@media (min-resolution: 120dpi) and (max-resolution: 125dpi) {
+  /* IF WINDOWS SCALING SET TO 125% */
+  *{
+    zoom: 0.958;
+  }
+  
+  .introduction__section{
+    margin-top: 250px;
+  }
+}
+
 
 @media (max-width: 1880px) and (min-width: 1780px) {
 

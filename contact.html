@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="Media/logo.png" type="image/x-icon" />
+    <title>METRO BOOMIN</title>
+  </head>
+
+  <body>
+    <!-- SEARCH MODAL -->
+    <!-- ISSUE TO DEBUG: SEARCH MODAL NOT WORKING 
+    <section class="search-modal">
+      <div class="close-button" id="search-close">
+        <img src="Media/close-icon.png" />
+      </div>
+      <div class="form__container">
+        <h3>SEARCH</h3>
+        <form>
+          <input
+            id="search-input"
+            type="text"
+            placeholder="Search for something..."
+            aria-label="Search"
+          />
+          <button type="submit" aria-label="Submit">SEARCH</button>
+        </form>
+      </div>
+      -->
+    <!-- NEWSLETTER MODAL -->
+    <section class="news-modal">
+      <!-- CLOSE BUTTON -->
+      <div class="close-button" id="close-button">
+        <img src="Media/close-icon.png" />
+      </div>
+      <div class="form__container">
+        <h3>SUBSCRIBE TO THE NEWSLETTER</h3>
+        <p>
+          Stay up to date with the latest news and updates about Metro Boomin
+        </p>
+        <form>
+          <input
+            type="text"
+            placeholder="Enter your name"
+            aria-label="Enter your name"
+          />
+          <input
+            type="text"
+            placeholder="Enter your email"
+            aria-label="Enter your email"
+          />
+          <button type="submit" aria-label="Submit">SUBMIT</button>
+        </form>
+      </div>
+    </section>
+    <header id="header-scroll">
+        <a href="index.html"><img class="logo" src="Media/logo.png" alt="Logo" /></a>
+      <nav>
+        <ul class="nav__links">
+          <li><a href="index.html" aria-label="HOME">HOME</a></li>
+        </ul>
+      </nav>
+      <div class="menu__icons">
+        <div class="search-button" id="search-button">
+          <img src="Media/search-icon.png" />
+        </div>
+        <div class="user-button" id="modal-button">
+          <img src="Media/user-icon.png" />
+        </div>
+        <div class="menu-button" onclick="toggleMenu()">
+          <img src="Media/menu-icon.png" />
+        </div>
+      </div>
+      <div class="mobile-nav">
+        <ul class="mobile-nav__links">
+          <li><a href="index.html">HOME</a></li>
+        </ul>
+      </div>
+    </header>
+<main>
+    <!-- CONTACT FORM -->
+    <section class="contact__form">
+        <h2>CONTACT</h2>
+        <form>
+            <input
+            type="text"
+            placeholder="Enter your name"
+            aria-label="Enter your name"
+            />
+            <input
+            type="text"
+            placeholder="Enter your email"
+            aria-label="Enter your email"
+            />
+            <textarea
+            placeholder="Enter your message"
+            aria-label="Enter your message"
+            ></textarea>
+            <button type="submit" aria-label="Submit">SEND</button>
+        </form>
+    </section>
+</main>
+<footer class="contact__footer">
+    <ul class="footer__links">
+      <li>
+        <h4>ABOUT</h4>
+        <a>Opportunities</a>
+        <a>Partners</a>
+        <a>Other</a>
+      </li>
+      <li>
+        <h4>HELP</h4>
+        <a>Guidelines</a>
+        <a>Support</a>
+        <a>FAQ</a>
+      </li>
+      <li>
+        <h4>ACCOUNT</h4>
+        <a>Login</a>
+        <a>Registration</a>
+        <a>Subscribe</a>
+      </li>
+      <li>
+        <a href="contact.html"><h4>CONTACT</h4></a>
+        <a href="contact.html">Contact Us</a>
+        <a>Phone Us</a>
+        <a>Jobs</a>
+      </li>
+    </ul>
+  </footer>
+  <script src="script.js"></script>
+</body>
