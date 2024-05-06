@@ -46,7 +46,8 @@ closeButton.addEventListener('click', function(e) {
   e.preventDefault();
 });
 
-// SEPERATING TWO SCROLLING EFFECTS SINCE THEY INTERFERE WITH EACH OTHER
+// SEPERATING TWO SCROLLING EFFECTS SINCE THEY
+// INTERFERE WITH EACH OTHER
 
 window.addEventListener('scroll', function() {
     let offset = window.pageYOffset;
@@ -112,5 +113,23 @@ function updateTooltipPosition(event) {
     tooltip.style.left = tooltipX + "px";
     tooltip.style.top = tooltipY + "px";
 }
+
+// CONTACT FORM VALIDATION DISPLAY ALERT INSIDE
+// THE FIELDS
+
+var form = document.getElementById('contact-form');
+var submitButton = document.getElementById('submit-button');
+
+
+
+// CONTACT FORM SUBMISSION 
+
+var form = document.getElementById('contact-form');
+var submitButton = document.getElementById('submit-button');
+
+form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    alert('Your message has been sent!');
+});
 
 

@@ -82,24 +82,28 @@
     <!-- CONTACT FORM -->
     <section class="contact__form">
         <h2>CONTACT</h2>
-        <form>
-            <input
+        <form id="contact-form">
+            <input id="name"
             type="text"
             placeholder="Enter your name"
             aria-label="Enter your name"
             />
-            <input
+            <input id="email"
             type="text"
             placeholder="Enter your email"
             aria-label="Enter your email"
             />
-            <textarea
+            <textarea id="message"
             placeholder="Enter your message"
             aria-label="Enter your message"
             ></textarea>
-            <button type="submit" aria-label="Submit">SEND</button>
+            <button type="submit" id="submit-button" aria-label="Submit">SEND</button>
         </form>
     </section>
+
+    <div class="tour-banner-contact">
+        <img src="Media/tour-banner.jpg" alt="Tour Banner"/>
+    </div>
 </main>
 <footer class="contact__footer">
     <ul class="footer__links">
@@ -128,6 +132,22 @@
         <a>Jobs</a>
       </li>
     </ul>
+
+    <div class="social__media">
+      <div class="social__media__icons">
+        <a href="https://www.instagram.com/metroboomin" target="_blank"
+          ><img src="Media/instagram-icon.png" alt="Instagram Icon"
+        /></a>
+        <a href="https://twitter.com/metroboomin" target="_blank"
+          ><img src="Media/x-icon.png" alt="Twitter Icon"
+        /></a>
+        <a href="https://www.snapchat.com/add/metroboomin" target="_blank"
+          ><img src="Media/snapchat-icon.png" alt="Facebook Icon"
+        /></a>
+    </div>
+    <img src="Media/footer-image.png" alt="Footer image" />
+  </div>
+
   </footer>
   <script src="script.js"></script>
 </body>
